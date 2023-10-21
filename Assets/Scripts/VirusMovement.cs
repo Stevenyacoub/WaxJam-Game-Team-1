@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel.Design.Serialization;
 using System.Security.Cryptography;
 using UnityEngine;
 
 public class VirusMovement : MonoBehaviour
 {
+    [SerializeField]
+    public float moveSpeed = 0.5f;
     Vector3 mousePosition;
-    public float moveSpeed = 0.1f;
     Rigidbody2D rb;
+
     Vector2 position = new Vector2(0f, 0f);
 
     private void Start()

@@ -254,13 +254,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 506206025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4648d7113878d0d49852067f209db730, type: 3}
+  m_Script: {fileID: 11500000, guid: ac8ac9ab1869e1a42adae65b6d0d85d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthTime: 100
   timeSpeed: 1
-  timeBarSprite: {fileID: 1002554705}
-  isLevelStarted: 1
+  timeBarSprite: {fileID: 0}
+  isLevelStarted: 0
 --- !u!114 &506206027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e23f61fb9456f4cb24adb1f5885fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.1
+  moveSpeed: 0.5
 --- !u!212 &506206028
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -361,7 +361,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &506206031
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -562,7 +562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13a9150b41d26345b6c878627bca174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDrainModifier: 2
 --- !u!61 &1622611670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -754,7 +753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b43e34b5291a9f4a83cd2795e4ca39a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageValue: 5
 --- !u!61 &2025657903
 BoxCollider2D:
   m_ObjectHideFlags: 0
