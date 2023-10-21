@@ -10,6 +10,8 @@ public class PlayerHealthTimer : MonoBehaviour
     [SerializeField]
     private float timeSpeed = 1; //how fast does the timer move down?
 
+    private float internalTimeMod = 1f; //adjust how fast the bar should be moving at base speed
+
     [SerializeField]
     private Image timeBarSprite = null;
 
@@ -27,7 +29,7 @@ public class PlayerHealthTimer : MonoBehaviour
     {
         if (isLevelStarted)
         {
-            curHealthTime -= timeSpeed * Time.deltaTime;
+            curHealthTime -= timeSpeed * Time.deltaTime * internalTimeMod;
             UpdateUI();
             if (curHealthTime <= 0)
             {
@@ -42,7 +44,7 @@ public class PlayerHealthTimer : MonoBehaviour
     /// modify the speed at which health drains
     /// </summary>
     /// <param name="newModifier"></param>
-    public void ModifyHealthDrain(float newModifier)
+    public void ModifyHealthDrain(float newModifier = 1)
     {
         timeSpeed = newModifier;
     }
@@ -71,14 +73,5 @@ public class PlayerHealthTimer : MonoBehaviour
     private void GameOver()
     {
         
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="collision"></param>
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-
     }
 }
