@@ -39,6 +39,11 @@ public class PlayerHealthTimer : MonoBehaviour
         }    
     }
 
+    public float GetTimeLeft()
+    {
+        return curHealthTime;
+    }
+
     /// <summary>
     /// modify the speed at which health drains
     /// </summary>

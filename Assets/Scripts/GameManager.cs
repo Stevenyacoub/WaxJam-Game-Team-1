@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     private GameObject gameOverUI;
     [SerializeField]
     private GameObject levelEndUI;
+    [SerializeField]
+    private TextMeshProUGUI levelEndText;
 
     void Awake()
     {
@@ -97,6 +99,7 @@ public class GameManager : MonoBehaviour
         if (levelFinished)
         {
             //reached the end
+            levelEndText.text = "Score: " + healthTimer.GetTimeLeft().ToString("0.00");
             levelEndUI.SetActive(true);
 
         }

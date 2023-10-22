@@ -12,7 +12,7 @@ public class VirusMovement : MonoBehaviour
     Vector3 mousePosition;
     Rigidbody2D rb;
 
-    Vector2 position = new Vector2(0f, 0f);
+    Vector3 position = Vector3.zero;
 
     [SerializeField]
     bool isLevelStarted = false;
@@ -28,7 +28,7 @@ public class VirusMovement : MonoBehaviour
         {
             mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+            position = Vector3.Lerp(transform.position, mousePosition, moveSpeed);
         }
     }
 
@@ -36,7 +36,15 @@ public class VirusMovement : MonoBehaviour
     {
         if (isLevelStarted)
         {
-            rb.MovePosition(position);
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, position - transform.position, out hit, 3.0f))
+            {
+                rb.MovePosition(hit.point);
+            }
+            else
+            {
+                rb.MovePosition(position);
+            }
         }
     }
 

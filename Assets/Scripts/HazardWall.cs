@@ -24,7 +24,7 @@ public class HazardWall : MonoBehaviour
         if (playerHealth)
         {
             //TriggerShake();
-            UnityEngine.Debug.Log(timerDrainModifier + " Damage Taken");
+            UnityEngine.Debug.Log(timerDrainModifier + " Drain");
             playerHealth.ModifyHealthDrain(timerDrainModifier);
         }
     }
@@ -38,7 +38,7 @@ public class HazardWall : MonoBehaviour
         PlayerHealthTimer playerHealth = c.gameObject.GetComponent<PlayerHealthTimer>();
         if (playerHealth)
         {
-            UnityEngine.Debug.Log(timerDrainModifier + " Damage Taken");
+            UnityEngine.Debug.Log(timerDrainModifier + " Drain Removed");
             playerHealth.ModifyHealthDrain();
         }
     }
