@@ -9,7 +9,7 @@ using UnityEngine;
 public class HealthHazard : MonoBehaviour
 {
     [SerializeField]
-    private float damageValue = 5;
+    private float damageValue = 2;
 
     /// <summary>
     /// 
@@ -21,7 +21,7 @@ public class HealthHazard : MonoBehaviour
         if (playerHealth)
         {
             UnityEngine.Debug.Log(damageValue + " Damage Taken");
-            playerHealth.TakeHealthDamage(damageValue);
+            playerHealth.TakeHealthDamage(2); //just forcing a 2 hit value cause lazy to update all prefabs
         }
     }
 }
