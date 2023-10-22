@@ -19,7 +19,7 @@ public class HealthHazard : MonoBehaviour
         PlayerHealthTimer playerHealth = c.gameObject.GetComponent<PlayerHealthTimer>();
         if (playerHealth)
         {
-            Debug.Log(damageValue + "Damage Taken");
+            Debug.Log(damageValue + " Damage Taken");
             playerHealth.TakeHealthDamage(damageValue);
         }
     }

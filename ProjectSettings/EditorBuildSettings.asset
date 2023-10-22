@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: e38a4023ebb53f74493f6077ffe4ef8b
   - enabled: 1
-    path: Assets/Scenes/JoelTestScene.unity
+    path: Assets/Scenes/Level1.unity
+    guid: 1e8e676bc2d1ee040bab4974dfded33b
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
     guid: 4faf9057b64edb247a2559b42cf65919
   m_configObjects: {}
