@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 /// <summary>
@@ -10,6 +11,9 @@ public class HazardWall : MonoBehaviour
     [SerializeField]
     private float timerDrainModifier = 2f;
 
+    [SerializeField]
+    private GameObject camera;
+
     /// <summary>
     /// 
     /// </summary>
@@ -19,6 +23,8 @@ public class HazardWall : MonoBehaviour
         PlayerHealthTimer playerHealth = c.gameObject.GetComponent<PlayerHealthTimer>();
         if (playerHealth)
         {
+            TriggerShake();
+            UnityEngine.Debug.Log(timerDrainModifier + " Damage Taken");
             playerHealth.ModifyHealthDrain(timerDrainModifier);
         }
     }
@@ -32,6 +38,7 @@ public class HazardWall : MonoBehaviour
         PlayerHealthTimer playerHealth = c.gameObject.GetComponent<PlayerHealthTimer>();
         if (playerHealth)
         {
+            UnityEngine.Debug.Log(timerDrainModifier + " Damage Taken");
             playerHealth.ModifyHealthDrain();
         }
     }
