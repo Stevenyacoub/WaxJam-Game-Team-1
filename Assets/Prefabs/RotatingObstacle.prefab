@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4064712798835957934}
   - component: {fileID: 4064712798835957933}
-  - component: {fileID: -5827877210843811398}
   m_Layer: 0
   m_Name: RotatingObstacle
   m_TagString: Untagged
@@ -47,19 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 150
---- !u!114 &-5827877210843811398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4064712798835957932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7df4f7eae9a7d4dbec70526abc32c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageValue: 3
 --- !u!1 &4064712799379878791
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +57,7 @@ GameObject:
   - component: {fileID: 4064712799379878784}
   - component: {fileID: 4064712799379878785}
   - component: {fileID: 4064712799379878786}
+  - component: {fileID: 6667602865744208308}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -171,3 +158,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6667602865744208308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4064712799379878791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7df4f7eae9a7d4dbec70526abc32c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageValue: 3
