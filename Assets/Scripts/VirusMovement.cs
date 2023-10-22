@@ -14,6 +14,9 @@ public class VirusMovement : MonoBehaviour
 
     Vector2 position = new Vector2(0f, 0f);
 
+    [SerializeField]
+    bool isLevelStarted = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,13 +24,32 @@ public class VirusMovement : MonoBehaviour
 
     private void Update()
     {
-        mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+        if (isLevelStarted)
+        {
+            mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+        }
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(position);
+        if (isLevelStarted)
+        {
+            rb.MovePosition(position);
+        }
+    }
+
+    public void GrantControl()
+    {      
+        isLevelStarted = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void StopControl()
+    {
+        isLevelStarted = false;
+        Cursor.visible = true;
     }
 }

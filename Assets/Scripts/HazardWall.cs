@@ -23,7 +23,7 @@ public class HazardWall : MonoBehaviour
         PlayerHealthTimer playerHealth = c.gameObject.GetComponent<PlayerHealthTimer>();
         if (playerHealth)
         {
-            //camera.ScreenShake.TriggerShake();
+            //TriggerShake();
             UnityEngine.Debug.Log(timerDrainModifier + " Damage Taken");
             playerHealth.ModifyHealthDrain(timerDrainModifier);
         }

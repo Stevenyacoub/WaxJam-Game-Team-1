@@ -16,14 +16,12 @@ public class PlayerHealthTimer : MonoBehaviour
     private Image timeBarSprite = null;
 
     private float curHealthTime;
-    [SerializeField]
     bool isLevelStarted = false;
 
     // Start is called before the first frame update
     void Start()
     {
         curHealthTime = maxHealthTime;
-        isLevelStarted = true;
     }
 
     private void Update()
@@ -57,7 +55,17 @@ public class PlayerHealthTimer : MonoBehaviour
     public void TakeHealthDamage(float damage)
     {
         curHealthTime -= damage;
+        if (curHealthTime <= 0) curHealthTime = 0;
+
         UpdateUI();
+
+        if (curHealthTime <= 0)
+        {
+            curHealthTime = 0;
+            isLevelStarted = false;
+            GameOver();
+        }
+
     }
 
     /// <summary>
@@ -73,6 +81,16 @@ public class PlayerHealthTimer : MonoBehaviour
     /// </summary>
     private void GameOver()
     {
-        
+        GameManager.gameManager.EndLevel(false);
+    }
+
+    public void StartTimer()
+    {
+        isLevelStarted = true;
+    }
+
+    public void StopTimer()
+    {
+        isLevelStarted = false;
     }
 }
