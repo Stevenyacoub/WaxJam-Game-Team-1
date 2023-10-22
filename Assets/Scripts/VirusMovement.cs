@@ -10,7 +10,9 @@ public class VirusMovement : MonoBehaviour
     [SerializeField]
     public float moveSpeed = 0.5f;
     Vector3 mousePosition;
+    [SerializeField] private ScreenShake shaker;
     Rigidbody2D rb;
+    private AudioSource _crashSound;
 
     Vector3 position = Vector3.zero;
 
@@ -20,6 +22,7 @@ public class VirusMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _crashSound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -59,5 +62,11 @@ public class VirusMovement : MonoBehaviour
     {
         isLevelStarted = false;
         Cursor.visible = true;
+    }
+    public void OnCollisionEnter2D(Collision2D c)
+    {
+        Debug.Log("Player Collision");
+        _crashSound.Play();
+        shaker.TriggerShake(0.2f);
     }
 }
