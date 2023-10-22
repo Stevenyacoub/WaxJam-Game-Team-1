@@ -13,7 +13,7 @@ public class ObjectPool : MonoBehaviour
     private int index = 0; //for counting Spawns
     private List<GameObject> objects = new List<GameObject>();
 
-    private void InitializeObjects()
+    private void Start()
     {
         for(int i = 0; i < amount; i++)
         {
@@ -25,11 +25,17 @@ public class ObjectPool : MonoBehaviour
 
     public GameObject Spawn()
     {
+        Debug.Log("Spawn Called");
+
         GameObject currentSpawn = objects[index];
+        currentSpawn.transform.position = this.transform.position;
         currentSpawn.SetActive(true);
+        
         
         index = (index + 1)%objects.Count;
 
         return currentSpawn;
     }
+
+
 }

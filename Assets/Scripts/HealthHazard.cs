@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 /// <summary>
@@ -19,7 +20,7 @@ public class HealthHazard : MonoBehaviour
         PlayerHealthTimer playerHealth = c.gameObject.GetComponent<PlayerHealthTimer>();
         if (playerHealth)
         {
-            Debug.Log(damageValue + " Damage Taken");
+            UnityEngine.Debug.Log(damageValue + " Damage Taken");
             playerHealth.TakeHealthDamage(damageValue);
         }
     }

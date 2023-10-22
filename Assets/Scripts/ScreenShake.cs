@@ -12,7 +12,7 @@ public class ScreenShake : MonoBehaviour
     [SerializeField] private Transform transform;
 
     [SerializeField] private float shakeDuration = 0f;
-    [SerializeField] private float shakeMagnitude = 0.8f;
+    [SerializeField] private float shakeMagnitude = 0.4f;
     [SerializeField] private float dampingSpeed = 1f;
 
     Vector3 initialPosition;
@@ -48,6 +48,6 @@ public class ScreenShake : MonoBehaviour
     //Activate a screenshake from another script
     public void TriggerShake()
     {
-        shakeDuration = 2.0f;
+        shakeDuration = 0.4f;
     }
 }
