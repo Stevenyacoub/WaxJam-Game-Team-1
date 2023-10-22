@@ -9,7 +9,7 @@ public class EndZone : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            GameManager.gameManager.EndLevel(true);
+            GameManager.Instance.EndLevel(true);
         }
     }
 }

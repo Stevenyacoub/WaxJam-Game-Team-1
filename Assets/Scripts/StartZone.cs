@@ -19,7 +19,7 @@ public class StartZone : MonoBehaviour
         if(hasStarted == false)
         {
             hasStarted = true;
-            GameManager.gameManager.StartLevel();
+            GameManager.Instance.StartLevel();
         }
     }
 }

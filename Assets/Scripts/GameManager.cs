@@ -6,7 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gameManager;
+    private static GameManager _instance;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<GameManager>();
+            }
+
+            return _instance;
+        }
+    }
 
     public PlayerHealthTimer healthTimer;
     public VirusMovement playerControl;
@@ -20,14 +32,22 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (gameManager != null && gameManager != this)
+        if (Instance != null && Instance != this)
         {
-            Destroy(gameManager);
+            Destroy(Instance.gameObject);
         }
         else
         {
-            gameManager = this;
+            _instance = this;
             DontDestroyOnLoad(this); //this instance will persist through scenes
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if(this == Instance)
+        {
+            _instance = null;
         }
     }
 
@@ -105,6 +125,11 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(int levelIndex)
     {
         SceneManager.LoadScene(levelIndex);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit(0);
     }
    #endregion
 }

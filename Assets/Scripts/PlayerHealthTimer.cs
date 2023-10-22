@@ -81,7 +81,7 @@ public class PlayerHealthTimer : MonoBehaviour
     /// </summary>
     private void GameOver()
     {
-        GameManager.gameManager.EndLevel(false);
+        GameManager.Instance.EndLevel(false);
     }
 
     public void StartTimer()

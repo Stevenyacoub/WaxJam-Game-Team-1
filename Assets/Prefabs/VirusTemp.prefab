@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8ac9ab1869e1a42adae65b6d0d85d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthTime: 100
+  maxHealthTime: 30
   timeSpeed: 1
   timeBarSprite: {fileID: 0}
 --- !u!50 &8900135393915249288
